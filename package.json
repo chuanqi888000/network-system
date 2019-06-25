@@ -85,11 +85,11 @@
   "main": ".eslintrc.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/caoxile/html5-vue-template.git"
+    "url": "https://github.com/chuanqi888000/network-system.git"
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/caoxile/html5-vue-template/issues"
+    "url": "https://github.com/chuanqi888000/network-system.git/issues"
   },
-  "homepage": "https://github.com/caoxile/html5-vue-template#readme"
+  "homepage": "https://github.com/chuanqi888000/network-system.git#readme"
 }
