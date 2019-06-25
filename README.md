@@ -1,4 +1,4 @@
-## html5-vue-template
+## html5-vue
 这是个基于Vue的单页应用,有vue-cli完整的脚手架.而且集成了一个内容完整,结构较好的html5的网站模板,样式自适应手机和电脑. 可以拿来作为门户网站
 
 ## 准备
@@ -10,7 +10,13 @@
 ## 开发
 ```bash
     # 克隆项目
-    git clone https://github.com/caoxile/html5-vue-template.git
+    git clone https://github.com/chuanqi888000/network-system.git
+
+    #上传github操作步骤
+    git init
+    git add .
+    git remote add origin https://github.com/chuanqi888000/network-system.git
+    git push -u origin master
 
     # 安装依赖
     npm install
