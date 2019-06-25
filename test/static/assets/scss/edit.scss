@@ -1,0 +1,60 @@
+
+$grey : rgb(55,60,65);
+.head .el-input__inner{
+    background: $grey!important;
+    border: none!important;
+    outline:none!important;
+    color: #fff!important;
+}
+.el-select-dropdown__list{
+    padding:6px 20px!important;
+    box-sizing: border-box!important;
+    color:#fff!important;
+}
+.el-scrollbar{
+    background: $grey!important;
+}
+.el-popper[x-placement^=bottom] .popper__arrow::after{
+    border-bottom-color: $grey!important;
+}
+.el-select-dropdown__item.hover, .el-select-dropdown__item:hover {
+    background-color: transparent!important;
+    color: #00c1de!important;
+}
+.el-select-dropdown__item{
+    color:#fff!important;
+}
+.dynamic .el-carousel__indicators {
+    display: none!important;
+}
+.dynamic .el-carousel__container{
+    height: 450px!important;
+}
+.el-carousel__item:nth-child(2n) {
+    background-color: rgb(24,30,33)!important;
+}
+
+.el-carousel__item:nth-child(2n+1) {
+    background-color: rgb(24,30,33)!important;
+}
+.el-carousel__arrow{
+    background-color: rgba(0,193,222,0.5);
+}
+.dynamic .el-carousel__item--card.is-active .imgcover h3,.dynamic .el-carousel__item--card.is-active .imgcover p{
+    opacity: 1!important;
+    transform: scale(1)!important;
+}
+.dynamic .el-carousel__item--card .imgcover h3,.dynamic .el-carousel__item--card .imgcover p{
+    opacity: 0!important;
+    transform: scale(0)!important;
+}
+.dynamic .el-carousel__item--card.is-active .imgcover:hover{
+    transform: scale(1.2)!important;
+    opacity: 1;
+}
+.tempWrap {
+    width: 100% !important;
+}
+.checkbtn .el-checkbox__label{
+    font-size: 12px!important;
+}
