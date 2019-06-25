@@ -18,6 +18,12 @@
     git remote add origin https://github.com/chuanqi888000/network-system.git
     git push -u origin master
 
+    #上传到github后由master切换到分支dev
+        #第一步重新拉取(这次拉取的是dev)
+        git fetch origin dev
+        #第二步进行切换
+        git checkout -b dev origin/dev
+
     # 安装依赖
     npm install
 
