@@ -1,28 +1,28 @@
 import * as types from '../type'
 
 const state = {
-    isLogin: false
+  isLogin: false
 }
 
 const actions = {
-    isLogin({ commit }, res) {
-        commit(types.IS_LOGIN, res)
-    }
+  isLogin ({ commit }, res) {
+    commit(types.IS_LOGIN, res)
+  }
 }
 
 const getters = {
-    isLogin: state => state.isLogin,
+  isLogin: state => state.isLogin
 }
 
 const mutations = {
-    [types.IS_LOGIN](state, res) {
-        state.isLogin = res.isLogin
-    }
+  [types.IS_LOGIN] (state, res) {
+    state.isLogin = res.isLogin
+  }
 }
 
 export default {
-    state,
-    actions,
-    getters,
-    mutations
+  state,
+  actions,
+  getters,
+  mutations
 }

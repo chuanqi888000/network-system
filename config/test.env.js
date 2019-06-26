@@ -8,5 +8,5 @@
 
 module.exports = {
   NODE_ENV: '"testing"',
-  BASE_URL: 'http://127.120.239.13'
+  BASE_API: '"http://127.120.239.13"'
 }

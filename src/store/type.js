@@ -3,3 +3,5 @@
 export const IS_LOGIN = 'IS_LOGIN' 
 //设置颜色
 export const COLOR = 'COLOR'
+// token校验
+export const TOKEN = 'TOKEN'

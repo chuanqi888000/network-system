@@ -3,6 +3,7 @@ import Router from 'vue-router'
 const Home = r => require.ensure([], () => r(require('@/pages/home/Home')), 'home') // 首页
 const Login = r => require.ensure([], () => r(require('@/pages/Login/Login')), 'login') // 登录页
 const Register = r => require.ensure([], () => r(require('@/pages/register/Register')), 'register') // 注册
+const DataResources = r => require.ensure([], () => r(require('@/pages/dataResources/dataResources')), 'dataResources') // 注册
 import Category from '@/pages/JobCategory'
 import Blog from '@/pages/BlogHome'
 import BlogDetails from '@/pages/BlogDetails'
@@ -22,15 +23,21 @@ export default new Router({
     },
     {
       // eslint-disable-next-line key-spacing
-      path:'/login',
-      name:'login',
-      component:Login
+      path: '/login',
+      name: 'login',
+      component: Login
     },
     {
       // eslint-disable-next-line key-spacing
-      path:'/register',
-      name:'register',
-      component:Register
+      path: '/register',
+      name: 'register',
+      component: Register
+    },
+    {
+      // eslint-disable-next-line key-spacing
+      path: '/dataResources',
+      name: 'dataResources',
+      component: DataResources
     }
     // {
     //   path: '/about',

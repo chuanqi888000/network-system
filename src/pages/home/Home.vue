@@ -33,6 +33,7 @@ import Map from './Map.vue'
 import Partners from './Partners.vue'
 import Footer from './Footer.vue'
 import { mapState, mapGetters ,mapActions,mapMutations} from 'vuex'
+import api from '../../api/index'
 export default {
   data(){
     return{
@@ -89,6 +90,20 @@ export default {
     console.log(this.$store.getters.isLogin)
     console.log(this.$store.getters.bgColor)
     console.log(process.env.NODE_ENV)
+    console.log(api)
+    let op = {}
+    this.$http({
+      url: api.resources.iot,
+      method: "post",
+      data: op
+    }).then(response => {
+      if(response.data.resCode == 1){
+
+      }
+    })
+    .catch(err => {
+      console.log(err);
+    });
   },
   computed:{
     ...mapGetters([
