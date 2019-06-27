@@ -12,6 +12,7 @@ sync(store, router)
 // eslint-disable-next-line no-unused-vars
 import Element from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+require('@/mock/index.js')// 引入mock数据，模拟创造数据，关闭则注释该行
 
 import '../static/assets/scss/reset.scss'
 import '../static/assets/scss/edit.scss'

@@ -58,3 +58,23 @@ $grey : rgb(55,60,65);
 .checkbtn .el-checkbox__label{
     font-size: 12px!important;
 }
+
+// .mv-main-leftmenu li,.el-submenu__title{
+//     background-color: #2d2f3b!important;
+// }
+// .mv-main-leftmenu li:hover{
+//     background-color: #373c41!important;
+// }
+// .el-submenu__title:hover{
+//     background-color: #373c41!important;
+// }
+.el-menu-item{
+    text-align: left!important;
+}
+.el-menu-item{
+    transition: all 1s;
+    transform-origin: left center;
+}
+.el-menu-item.is-active {
+    background-color: #09e9f4 !important;
+ }
