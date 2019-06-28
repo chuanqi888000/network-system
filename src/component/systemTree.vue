@@ -8,9 +8,9 @@
         </template>
         <Tree :menus="value.childResource"></Tree>
       </el-submenu>
-      <el-menu-item :index="value.resourceUrl ? value.resourceUrl : value.name" v-else :key="value.id">
+      <el-menu-item :index="value.resourceUrl ? value.resourceUrl : value.name" v-else :key="value.id" v-on:click="Link(value)">
         <i class="iconfont" :class="value.icon"></i>
-        <span v-on:click="Link(value)" slot="title">{{value.name}}</span>
+        <span slot="title">{{value.name}}</span>
       </el-menu-item>
     </template>
   </div>
@@ -25,10 +25,10 @@ export default {
       }
   },
   mounted(){
-      
+
   },
   created(){
-      console.log(this.$attrs)
+      console.log(this.$attrs.menus)
       this.menus=this.$attrs.menus
   },
   methods: {

@@ -22,7 +22,7 @@ export default {
             iconList:[
                 {
                     name:'大数据应用',
-                    icon:'el-icon-dashuju'
+                    icon:'el-icon-keshihuashujuETL'
                 },
                 {
                     name:'计算集群',

@@ -4,8 +4,8 @@ const Home = r => require.ensure([], () => r(require('@/pages/home/Home')), 'hom
 const Login = r => require.ensure([], () => r(require('@/pages/Login/Login')), 'login') // 登录页
 const Register = r => require.ensure([], () => r(require('@/pages/register/Register')), 'register') // 注册
 const DataResources = r => require.ensure([], () => r(require('@/pages/dataResources/dataResources')), 'dataResources') // 数据源
-const Main1 = r => require.ensure([], () => r(require('@/pages/dataResources/main1')), 'main1') // 注册
-const Main2 = r => require.ensure([], () => r(require('@/pages/dataResources/main2')), 'main2') // 注册
+const UserManage = r => require.ensure([], () => r(require('@/pages/dataResources/userManage')), 'userManage') // 注册
+const RoleManage = r => require.ensure([], () => r(require('@/pages/dataResources/roleManage')), 'roleManage') // 注册
 import Category from '@/pages/JobCategory'
 import Blog from '@/pages/BlogHome'
 import BlogDetails from '@/pages/BlogDetails'
@@ -40,14 +40,17 @@ export default new Router({
       path: '/dataResources',
       name: 'dataResources',
       component: DataResources,
+      meta: { name: '数据资产' },
       children: [
         {
-          path: 'main1',
-          component: Main1
+          path: 'userManage',
+          component: UserManage,
+          meta: { name: '数据资产/用户管理/用户管理' }
         },
         {
-          path: 'main2',
-          component: Main2
+          path: 'roleManage',
+          component: RoleManage,
+          meta: { name: '数据资产/角色管理' }
         }
       ]
     }

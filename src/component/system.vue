@@ -4,7 +4,7 @@
             <el-aside width="200px" :class="isCollapse ? 'menu-hide' :''">
                 <div class="mv-main-leftmenu">
                     <div class="mv-main-leftmenu-icon">
-                    <i class="iconfont icon-tubiaozhizuomoban"></i>
+                    <i class="iconF" :class="icon"></i>
                     </div>
                     <el-menu
                     :default-active='$route.path'
@@ -32,6 +32,7 @@
 <script>
 import Systemtree from './systemTree'
 export default {
+    props: ['icon'],
     data(){
         return{
             routerDefault: true,
@@ -139,5 +140,12 @@ export default {
     background-size: 100%;
     vertical-align: middle;
   }
+}
+.iconF{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 50px;
 }
 </style>

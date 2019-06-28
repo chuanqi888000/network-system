@@ -47,8 +47,7 @@ export const Throttle = (fn, t) => {
 };
 // 日期转换
 // 只有年月日
-export function formatDate(secs) {
-    console.log(secs)
+export function formatDateTime(secs) {
     var t = new Date(secs)
     var year = t.getFullYear();
     var month = t.getMonth() + 1
@@ -71,7 +70,7 @@ export function formatDate(secs) {
     if (second < 10) {
       second = '0' + second
     }
-    return year + '-' + month + '-' + date
+    return year + '-' + month + '-' + date +'\xa0\xa0\xa0' + hour + ':' + minute + ':' + second
   }
   // 解析url参数
 export function param2Obj(url) {
@@ -111,3 +110,32 @@ export function remoteLoad(url) {
       document.body.removeChild(scriptElement)
     }
   }
+
+  // 手机号验证
+export function isvalidPhone(str) {
+  const reg = /^1[3|4|5|6|7|8|9][0-9]\d{8}$/
+  return reg.test(str)
+}
+
+// 地理地位信息
+export function getLocation(){
+  return new Promise((resolve,reject) => {
+    AMap.plugin('AMap.Geolocation', function() {
+      var geolocation = new AMap.Geolocation({
+          enableHighAccuracy: true,//是否使用高精度定位，默认:true
+          timeout: 10000,          //超过10秒后停止定位，默认：5s
+          buttonPosition:'RB',    //定位按钮的停靠位置
+          buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+          zoomToAccuracy: true,   //定位成功后是否自动调整地图视野到定位点
+
+      });
+      geolocation.getCurrentPosition(function(status,result){
+          if(status=='complete'){
+            resolve(result)
+          }else{
+            reject(result)
+          }
+      });
+    });    
+  })
+}

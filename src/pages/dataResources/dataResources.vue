@@ -1,50 +1,49 @@
 <template>
     <div class="data-common">
         <Head></Head>
-        <System class="box" :menus="menus"></System>
+        <System class="box" :menus="menus" :icon="icon"></System>
     </div>
 </template>
 <script>
-import Head from '../../component/head'
+import Head from '../../component/headCommon'
 import System from '../../component/system'
 export default {
     data(){
         return{
+            icon: 'el-icon-jichushuju-zichanbaobiao',
             menus:[
                 {
                     accCtrlStr: "",
                     checked: null,
-                    childResource: [
-                        {
-                            accCtrlStr: "",
-                            checked: null,
-                            childResource: [],
-                            createTime: null,
-                            description: "",
-                            enName: "",
-                            icon: "icon-xiangmu1",
-                            id: 1104,
-                            jumpUrl: "",
-                            levelNum: 2,
-                            name: "位置管理",
-                            parentId: 1108,
-                            resourceOrder: 0,
-                            resourceType: null,
-                            resourceUrl: "/dataResources/main1",
-                            showFlag: "1",
-                            systemId: null,
-                            updateTime: null,
-                        }
-                    ],
+                    childResource: [{
+                        accCtrlStr: "",
+                        checked: null,
+                        childResource: [],
+                        createTime: null,
+                        description: "",
+                        enName: "用户管理",
+                        icon: "el-icon-jiaoseguanli",
+                        id: 1202,
+                        jumpUrl: "",
+                        levelNum: 2,
+                        name: "用户管理",
+                        parentId: 1108,
+                        resourceOrder: 0,
+                        resourceType: null,
+                        resourceUrl: "/dataResources/userManage",
+                        showFlag: "1",
+                        systemId: null,
+                        updateTime: null,
+                    }],
                     createTime: null,
                     description: "",
                     enName: "",
-                    icon: "icon-xiangmu1",
+                    icon: "el-icon-Management",
                     id: 1108,
                     jumpUrl: "",
                     levelNum: 2,
-                    name: "张三",
-                    parentId: 1107,
+                    name: "用户管理",
+                    parentId: 1101,
                     resourceOrder: 0,
                     resourceType: null,
                     resourceUrl: "",
@@ -59,15 +58,15 @@ export default {
                     createTime: null,
                     description: "",
                     enName: "",
-                    icon: "icon-xiangmu1",
-                    id: 1109,
+                    icon: "el-icon-jiaoseguanli",
+                    id: 1102,
                     jumpUrl: "",
                     levelNum: 2,
-                    name: "李四",
+                    name: "角色管理",
                     parentId: 1107,
                     resourceOrder: 0,
                     resourceType: null,
-                    resourceUrl: "/dataResources/main2",
+                    resourceUrl: "/dataResources/roleManage",
                     showFlag: "1",
                     systemId: null,
                     updateTime: null,
