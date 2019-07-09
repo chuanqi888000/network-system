@@ -92,18 +92,18 @@ export default {
     console.log(process.env.NODE_ENV)
     console.log(api)
     let op = {}
-    this.$http({
-      url: api.resources.iot,
-      method: "post",
-      data: op
-    }).then(response => {
-      if(response.data.resCode == 1){
+    // this.$http({
+    //   url: api.resources.iot,
+    //   method: "post",
+    //   data: op
+    // }).then(response => {
+    //   if(response.data.resCode == 1){
 
-      }
-    })
-    .catch(err => {
-      console.log(err);
-    });
+    //   }
+    // })
+    // .catch(err => {
+    //   console.log(err);
+    // });
   },
   computed:{
     ...mapGetters([

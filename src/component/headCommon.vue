@@ -13,7 +13,7 @@
                     {{title}}
                 </div>
                 <div class="weather" v-show="defaultShow">
-                    {{weatherResquest.region}} {{weatherResquest.dayweather}}~{{weatherResquest.nightweather}} {{weatherResquest.daytemp}}~{{weatherResquest.nighttemp}}℃ &nbsp;&nbsp;&nbsp;{{weatherResquest.weather}}
+                    {{weatherResquest.region}} {{weatherResquest.dayweather}} {{weatherResquest.daytemp}}~{{weatherResquest.nighttemp}}℃ &nbsp;&nbsp;&nbsp;{{weatherResquest.weather}}
                 </div>     
             </div> 
         </div>

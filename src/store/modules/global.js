@@ -1,10 +1,12 @@
+/* eslint-disable no-trailing-spaces */
 /* 通用配置 */
 
 import * as types from '../type'
 import {Local} from '@/storage/index'
 const state = {
   bgColor: Local.get('bgColor') || 'blue',
-  token: Local.get('token') || ''
+  token: Local.get('token') || '',
+  defaultSystem: Local.get('defaultSystem') || true
 }
 
 const actions = {
@@ -13,12 +15,16 @@ const actions = {
   },
   setToken ({commit}, token) {
     commit(types.TOKEN, token)
+  },
+  setDefaultSystem ({commit}, defaultSystem) {
+    commit(types.DEFAULTSYSTEM, defaultSystem)
   }
 }
 
 const getters = {
   bgColor: state => state.bgColor,
-  token: state => state.token
+  token: state => state.token,
+  defaultSystem: state => state.defaultSystem 
 }
 
 const mutations = {
@@ -29,6 +35,10 @@ const mutations = {
   [types.TOKEN] (state, token) {
     state.token = token
     Local.set('token', token)
+  },
+  [types.DEFAULTSYSTEM] (state, defaultSystem) {
+    state.defaultSystem = defaultSystem
+    Local.set('defaultSystem', defaultSystem)
   }
 }
 

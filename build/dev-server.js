@@ -4,7 +4,7 @@ var config = require('../config')
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
-
+const chalk = require('chalk')//控制命令行输出字体颜色
 var opn = require('opn')
 var path = require('path')
 var express = require('express')
@@ -13,6 +13,8 @@ var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = process.env.NODE_ENV === 'testing'
   ? require('./webpack.prod.conf')
   : require('./webpack.dev.conf')
+
+  var host = require('./ip')()
 
   console.log(process.env.NODE_ENV)
 // default port where dev server listens for incoming traffic
@@ -66,7 +68,7 @@ var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsS
 app.use(staticPath, express.static('./static'))
 
 var uri = 'http://localhost:' + port
-
+var uri1 = 'http://' + host  + ':' + port
 var _resolve
 var readyPromise = new Promise(resolve => {
   _resolve = resolve
@@ -75,6 +77,7 @@ var readyPromise = new Promise(resolve => {
 console.log('> Starting dev server...')
 devMiddleware.waitUntilValid(() => {
   console.log('> Listening at ' + uri + '\n')
+  console.log(chalk.green('> Listening at ' + uri1 + '\n'))
   // when env is testing, don't need open it
   if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
     opn(uri)

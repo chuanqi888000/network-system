@@ -1,5 +1,5 @@
 <template>
-    <div class="head box-siz">
+    <div class="head box-siz home-head">
         <div class="head-left box-siz" @mouseover="showLeft" @mouseout="hideLeft" :class="{'head-active':defaultShow}">
             <span class="el-icon-goutongye_santiaogang_tiaozhuanxuanzehaizi rotatebtn" :class="defaultShow ? 'span-active' : ''"></span>  
             <div class="headContent" :class="defaultShow ? 'content-active' : ''">

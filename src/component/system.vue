@@ -24,23 +24,34 @@
             <div class='menu-left'>
                 <el-main id="mv-main-container">
                     <router-view></router-view>
+                    <!-- <div v-show="defaultSystem">系统分配</div> -->
+                    <Link  v-show="defaultSystem"/>
                 </el-main>
             </div>
         </el-container>
     </div>
 </template>
 <script>
+import { mapGetters } from "vuex";
 import Systemtree from './systemTree'
+import Link from '../pages/dataAssets/link/link'
 export default {
     props: ['icon'],
+    computed:{
+        ...mapGetters(["defaultSystem"]),
+    },
+    mounted(){
+        console.log(this.defaultSystem)
+    },
     data(){
         return{
             routerDefault: true,
-            isCollapse: false,
+            isCollapse: false
         }
     },
     components: {
-        Systemtree
+        Systemtree,
+        Link
     }
 }
 </script>

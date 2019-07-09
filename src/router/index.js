@@ -1,22 +1,25 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-trailing-spaces */
 import Vue from 'vue'
 import Router from 'vue-router'
+import store from '../store/index'
+import { Loading, Message } from 'element-ui'
 const Home = r => require.ensure([], () => r(require('@/pages/home/Home')), 'home') // 首页
 const Login = r => require.ensure([], () => r(require('@/pages/Login/Login')), 'login') // 登录页
 const Register = r => require.ensure([], () => r(require('@/pages/register/Register')), 'register') // 注册
-const DataResources = r => require.ensure([], () => r(require('@/pages/dataResources/dataResources')), 'dataResources') // 数据源
-const UserManage = r => require.ensure([], () => r(require('@/pages/dataResources/userManage')), 'userManage') // 注册
-const RoleManage = r => require.ensure([], () => r(require('@/pages/dataResources/roleManage')), 'roleManage') // 注册
-import Category from '@/pages/JobCategory'
-import Blog from '@/pages/BlogHome'
-import BlogDetails from '@/pages/BlogDetails'
-import JobSearch from '@/pages/JobSearch'
-import JobSingle from '@/pages/JobSingle'
-import PricingPlan from '@/pages/PricingPlan'
-import Elements from '@/pages/Elements'
+const DataAssets = r => require.ensure([], () => r(require('@/pages/dataAssets/dataAssets')), 'dataAssets') // 数据源
+const DictionaryManage = r => require.ensure([], () => r(require('@/pages/dataAssets/dictionaryManage')), 'dictionaryManage') // 字典管理
+const AccountManage = r => require.ensure([], () => r(require('@/pages/dataAssets/accountManage')), 'accountManage') // 账号管理
+const BusinessManage = r => require.ensure([], () => r(require('@/pages/dataAssets/businessManage')), 'businessManage') // 角色管理
+
+const SecondCompont = r => require.ensure([], () => r(require('@/pages/dataAssets/secondCompont')), 'secondCompont') // 公共模块
+const ModuleManage = r => require.ensure([], () => r(require('@/pages/dataAssets/systemManage/moduleManage')), 'moduleManage') // 系统管理/模块管理
+
+const AttributeSettingManage = r => require.ensure([], () => r(require('@/pages/dataAssets/settingManage/attributeSettingManage')), 'attributeSettingManage') // 配置管理/属性配置
 
 Vue.use(Router)
 
-export default new Router({
+var router = new Router({
   routes: [
     {
       path: '/',
@@ -37,62 +40,79 @@ export default new Router({
     },
     {
       // eslint-disable-next-line key-spacing
-      path: '/dataResources',
-      name: 'dataResources',
-      component: DataResources,
-      meta: { name: '数据资产' },
+      path: '/dataAssets',
+      name: 'dataAssets',
+      component: DataAssets,
+      meta: {
+        name: '数据资产',
+        requireAuth: false
+      },
       children: [
         {
-          path: 'userManage',
-          component: UserManage,
-          meta: { name: '数据资产/用户管理/用户管理' }
+          path: 'dictionaryManage',
+          component: DictionaryManage,
+          meta: { name: '数据资产/字典管理' }
         },
         {
-          path: 'roleManage',
-          component: RoleManage,
-          meta: { name: '数据资产/角色管理' }
+          path: 'accountManage',
+          component: AccountManage,
+          meta: { name: '数据资产/账号管理' }
+        },
+        {
+          path: 'businessManage',
+          component: BusinessManage,
+          meta: { name: '数据资产/业务管理' }
+        },
+        {
+          path: 'systemManage',
+          component: SecondCompont,
+          children: [{
+            path: 'moduleManage',
+            component: ModuleManage,
+            meta: { name: '数据资产/系统管理/模块管理' }
+          }]
+        },
+        {
+          path: 'settingManage',
+          component: SecondCompont,
+          children: [{
+            path: 'attributeSettingManage',
+            component: AttributeSettingManage,
+            meta: { name: '数据资产/配置管理/属性配置' }
+          }]
+        },
+        {
+          path: '*',
+          redirect: to => {
+            const { hash, params, query } = to
+            console.log(hash)
+            store.dispatch('setDefaultSystem', true)
+            console.log(store.getters.defaultSystem)
+            Message({
+              type: 'warning',
+              message: '暂时还没开通相关功能，敬请期待！'
+            })
+            return '/dataAssets'
+          }
         }
       ]
     }
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   component: About
-    // },
-    // {
-    //   path: '/category',
-    //   name: 'category',
-    //   component: Category
-    // },
-    // {
-    //   path: '/blog',
-    //   name: 'blog',
-    //   component: Blog
-    // },
-    // {
-    //   path: '/blogDetails',
-    //   name: 'blogDetails',
-    //   component: BlogDetails
-    // },
-    // {
-    //   path: '/jobSearch',
-    //   name: 'jobSearch',
-    //   component: JobSearch
-    // },
-    // {
-    //   path: '/jobSingle',
-    //   name: 'jobSingle',
-    //   component: JobSingle
-    // },
-    // {
-    //   path: '/pricingPlan',
-    //   name: 'pricingPlan',
-    //   component: PricingPlan
-    // },
-    // {
-    //   path: '/elements',
-    //   name: 'elements',
-    //   component: Elements
-    // }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  console.log(to)
+  if (to.name === 'dataAssets') {
+    if (to.redirectedFrom) {
+      next()
+    } else {
+      next()
+    }
+  } else {
+    store.dispatch('setDefaultSystem', false)
+    console.log(store.getters.defaultSystem)
+    next()
+  }
+})
+
+export default router

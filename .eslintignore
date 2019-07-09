@@ -2,3 +2,4 @@ build/*.js
 config/*.js
 src/utils/*.js
 src/mock/*.js
+src/pages/dataAssets/mixin/*.js
