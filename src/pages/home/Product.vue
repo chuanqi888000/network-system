@@ -57,7 +57,8 @@
     </div>
 </template>
 <script>
-import { setTimeout } from 'timers';
+// import { setTimeout } from 'timers';
+require("../../../static/assets/js/vendor/mg-space.js")
 export default {
     mounted(){
         $('.mg-space-init').mgSpace();

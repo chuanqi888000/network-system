@@ -1,0 +1,2 @@
+webpackJsonp([8],{242:function(e,t,n){var s=n(96)(null,n(404),null,null);s.options.__file="D:\\learn\\datacenter\\src\\pages\\dataAssets\\settingManage\\attributeSettingManage.vue",s.esModule&&Object.keys(s.esModule).some(function(e){return"default"!==e&&"__esModule"!==e}),s.options.functional,e.exports=s.exports},404:function(e,t,n){e.exports={render:function(){var e=this,t=e.$createElement;return(e._self._c||t)("div",[e._v("\n    1111\n")])},staticRenderFns:[]},e.exports.render._withStripped=!0}});
+//# sourceMappingURL=8.3c979af85eaa3cca5161.js.map

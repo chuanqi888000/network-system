@@ -10,7 +10,7 @@
     "build": "node build/build.js",
     "deploy": "gh-pages -d dist",
     "dev:test": "cross-env NODE_ENV=testing node build/dev-server",
-    "build:test": "cross-env NODE_ENV=testing node build/build.js"
+    "build:test": "cross-env NODE_ENV=testing node build/test.js"
   },
   "dependencies": {
     "axios": "^0.19.0",

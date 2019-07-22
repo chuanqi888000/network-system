@@ -93,17 +93,22 @@ export default {
     console.log(api)
     let op = {}
     // this.$http({
-    //   url: api.resources.iot,
-    //   method: "post",
-    //   data: op
+    //   baseURL: '',
+    //   url: '../../../static/assets/json/city.json',
+    //   method: "get"
     // }).then(response => {
-    //   if(response.data.resCode == 1){
 
-    //   }
     // })
-    // .catch(err => {
-    //   console.log(err);
-    // });
+
+    this.$http({
+      baseURL: '',
+      url: '/news/index',
+      method: "post",
+      data: op
+    }).then(response => {
+      console.log(response)
+    })
+
   },
   computed:{
     ...mapGetters([

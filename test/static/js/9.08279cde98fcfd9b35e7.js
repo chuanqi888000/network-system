@@ -1,0 +1,2 @@
+webpackJsonp([9],{240:function(e,t,n){var o=n(96)(null,n(393),null,null);o.options.__file="D:\\learn\\datacenter\\src\\pages\\dataAssets\\secondCompont.vue",o.esModule&&Object.keys(o.esModule).some(function(e){return"default"!==e&&"__esModule"!==e}),o.options.functional,e.exports=o.exports},393:function(e,t,n){e.exports={render:function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",[n("router-view")],1)},staticRenderFns:[]},e.exports.render._withStripped=!0}});
+//# sourceMappingURL=9.08279cde98fcfd9b35e7.js.map
